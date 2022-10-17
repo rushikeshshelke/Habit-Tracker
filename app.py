@@ -4,6 +4,8 @@ from flask import Flask
 from routes import routes
 from pymongo import MongoClient
 from dotenv import load_dotenv
+from commonLibs.initialiseLogging import InitialiseLogging
+from commonLibs.globalVariables import GlobalVariables
 
 def createApp():
     app = Flask(__name__)
@@ -11,7 +13,9 @@ def createApp():
     load_dotenv()
     client = MongoClient(os.environ.get('MONGODB_URI'))
     app.db = client.get_database(os.environ.get("DATABASE_NAME"))
-    app.run(host="0.0.0.0",port=5054,debug=True)
+    InitialiseLogging().setupLogging()
+    GlobalVariables.LOGGER.info("Habit Tracker")
+    app.run(host="0.0.0.0",port=26519,debug=True)
 
 # if __name__ == "__main__":
 #     createApp()

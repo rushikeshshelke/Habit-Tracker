@@ -3,14 +3,12 @@ import datetime
 import uuid
 
 from flask import Blueprint, render_template, request, redirect, url_for, current_app
-from commonLibs.initialiseLogging import InitialiseLogging
 from commonLibs.globalVariables import GlobalVariables
 from commonLibs.commonConfigs import CommonConfigs
 
 pages = Blueprint("habits",__name__,template_folder="templates")
 
-InitialiseLogging().setupLogging()
-GlobalVariables.LOGGER.info("Habit Tracker")
+
 
 @pages.context_processor
 def calcDateRange():
