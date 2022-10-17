@@ -11,7 +11,7 @@ def createApp():
     load_dotenv()
     client = MongoClient(os.environ.get('MONGODB_URI'))
     app.db = client.get_database(os.environ.get("DATABASE_NAME"))
-    app.run(host="0.0.0.0",port=5000,debug=True)
+    app.run(host="0.0.0.0",port=5050,debug=True)
 
 if __name__ == "__main__":
     createApp()
