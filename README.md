@@ -12,5 +12,5 @@ Helps to track habits and completions of habits for a day and store them using m
 ### Usage
 ```
 
-App URL : 
+App URL : https://flask-habit-tracker-app.herokuapp.com/habit-tracker
 ```
