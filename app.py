@@ -15,7 +15,7 @@ def createApp():
     app.db = client.get_database(os.environ.get("DATABASE_NAME"))
     InitialiseLogging().setupLogging()
     GlobalVariables.LOGGER.info("Habit Tracker")
-    app.run(host="0.0.0.0",port=26519,debug=True)
+    app.run(host="0.0.0.0",port=int(os.environ.get("PORT")),debug=True)
 
 # if __name__ == "__main__":
 #     createApp()
